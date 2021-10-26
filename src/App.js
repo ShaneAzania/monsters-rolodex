@@ -6,8 +6,8 @@ import { SearchBar } from './components/search-bar/search-bar.component';
 class App extends Component {
 	//extend Component for Classes and other React tools
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			monsters: [],
@@ -25,7 +25,13 @@ class App extends Component {
 	}
 
 	handleChange = (event) => {
-		this.setState({ searchField: event.target.value });
+		this.setState({ searchField: event.target.value }, () => console.log(this.state.searchField));
+
+		/* //Using an arrow function instead of an object
+		this.setState(
+			(prevState, prevProps) => ({ searchField: event.target.value }),
+			() => console.log(this.state.searchField)
+		);*/
 	};
 
 	render() {
