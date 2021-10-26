@@ -25,7 +25,7 @@ class App extends Component {
 	}
 
 	handleChange = (event) => {
-		this.setState({ searchField: event.target.value }, () => console.log(this.state.searchField));
+		this.setState({ searchField: event.target.value } /*, () => console.log(this.state.searchField)*/);
 
 		/* //Using an arrow function instead of an object
 		this.setState(
